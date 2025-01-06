@@ -14,7 +14,7 @@ export async function POST(req: NextRequest) {
     conversationHistory.push({ role: 'user', content: message });
 
     const response = await openai.chat.completions.create({
-      model: 'gpt-4o-mini',
+      model: 'gpt-4',
       messages: [
         { role: 'system', content: 'You are a helpful assistant.' },
         ...conversationHistory.map((msg) => ({
